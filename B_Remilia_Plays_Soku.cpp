@@ -21,6 +21,22 @@ using namespace std;
 const int INF = 1e9;
 const ll INFLL = 1e18;
 const int MOD = 1e9 + 7;
+void solve()
+{
+    ll n, x, y, k;
+    cin >> n >> x >> y >> k;
+    if (x > y)
+        swap(x, y);
+    ll ans = min(y - x, n + x - y);
+
+    if (n == 2 || n == 3)
+    {
+        cout << 1 << endl;
+        return;
+    }
+
+    cout << ans + k << endl;
+}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -31,12 +47,7 @@ int main()
 
     while (t--)
     {
-        ll n, x, y, k;
-        cin >> n >> x >> y >> k;
-        ll ans;
-        ans = abs(x - y);
-        ans = ans + k;
-        cout << ans % n << endl;
+        solve();
     }
 
     return 0;
